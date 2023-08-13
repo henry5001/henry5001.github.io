@@ -1,0 +1,237 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>JavaEE平台技术 | Henry's Hexo</title><meta name="author" content="Henry"><meta name="copyright" content="Henry"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="JavaEE的历史渊源JavaEE和Spring的规范相互影响，相互发展…… 预备知识Web基础Http协议，一次请求一次响应，一问一答，不问不答Https协议，对请求和响应的内容加密 任何协议都分有包头Head和正文Body的部分HeadBody中通常放的是JSON格式的内容 Http响应状态码 200&#x2F;201 完成400 请求语法错误401 请求未经授权，需要登录，但你没登录403">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaEE平台技术">
+<meta property="og:url" content="http://example.com/2023/08/12/JavaEE%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF/index.html">
+<meta property="og:site_name" content="Henry&#39;s Hexo">
+<meta property="og:description" content="JavaEE的历史渊源JavaEE和Spring的规范相互影响，相互发展…… 预备知识Web基础Http协议，一次请求一次响应，一问一答，不问不答Https协议，对请求和响应的内容加密 任何协议都分有包头Head和正文Body的部分HeadBody中通常放的是JSON格式的内容 Http响应状态码 200&#x2F;201 完成400 请求语法错误401 请求未经授权，需要登录，但你没登录403">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-08-12T05:47:46.000Z">
+<meta property="article:modified_time" content="2023-08-13T16:11:23.321Z">
+<meta property="article:author" content="Henry">
+<meta name="twitter:card" content="summary"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/08/12/JavaEE%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/local-search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'JavaEE平台技术',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-08-14 00:11:23'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Henry's Hexo</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">JavaEE平台技术</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-08-12T05:47:46.000Z" title="发表于 2023-08-12 13:47:46">2023-08-12</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-08-13T16:11:23.321Z" title="更新于 2023-08-14 00:11:23">2023-08-14</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="JavaEE平台技术"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="JavaEE的历史渊源"><a href="#JavaEE的历史渊源" class="headerlink" title="JavaEE的历史渊源"></a>JavaEE的历史渊源</h2><p>JavaEE和Spring的规范相互影响，相互发展……</p>
+<h2 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h2><h3 id="Web基础"><a href="#Web基础" class="headerlink" title="Web基础"></a>Web基础</h3><p>Http协议，一次请求一次响应，一问一答，不问不答<br>Https协议，对请求和响应的内容加密</p>
+<p>任何协议都分有包头Head和正文Body的部分<br>Head<br>Body中通常放的是JSON格式的内容<br><img src="/img/JavaEE%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF/2023-08-12-20-07-37.png" alt="通过Fiddler工具查看URL的Header"></p>
+<p>Http响应状态码</p>
+<p>200&#x2F;201 完成<br>400 请求语法错误<br>401 请求未经授权，需要登录，但你没登录<br>403 已登录授权，但没有权限<br>404 URL错误，找不到资源</p>
+<p>500开头的错误通常是服务器本身的问题<br>500 服务器崩了<br>503 服务器阻塞</p>
+<h3 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h3><p>Spring中Servlet Stack的所有技术都是基于Servlet规范实现的</p>
+<h4 id="Servlet规范"><a href="#Servlet规范" class="headerlink" title="Servlet规范"></a>Servlet规范</h4><p>最开始是用来做服务器的表现层，<br>把服务器分成了容器和组件两个部分，<code>Servlet容器</code>通常是Tomcat或者Jetty，<code>Servlet组件(Servlet)</code>就是我们用Java写的代码</p>
+<p>比如下图浏览器先请求到Servlet容器，容器再根据Http Request去运行指定的Servlet，比如这里请求的是是访问数据库，再产生Http Response送回给浏览器。<br><img src="/img/JavaEE%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF/2023-08-12-20-37-54.png"></p>
+<h4 id="如何实现Servlet规范"><a href="#如何实现Servlet规范" class="headerlink" title="如何实现Servlet规范"></a>如何实现Servlet规范</h4><p><img src="/img/JavaEE%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF/2023-08-12-21-00-56.png"><br>javax.servlet.Servlet的<code>service(ServletRequest，ServletResponse)</code>这个method的参数是不包含Http的，Servlet或许还可以在其他网络协议上实现，但事实是30年过去了，Servlet也没有在其他网络协议上去实现。</p>
+<p><code>javax.servlet.Servlet</code>包中的接口和基类，你去基础或者实现这些接口和基类，就是在它的规范下去写代码，那么你就是符合Servlet规范的。<br>只要我们写代码时遵循了JavaEE的规范，我们把代码放到任意一个符合JavaEE规范的容器中，都是可以跑起来的。</p>
+<h3 id="Tomcat并发原理"><a href="#Tomcat并发原理" class="headerlink" title="Tomcat并发原理"></a>Tomcat并发原理</h3><p>作为服务端要短时间内响应来自客户端的多个请求，存在有不同的客户端会同时发过来很多的 HTTP 的 Request，在 Servlet 的容器中，针对每一个 HTTP 的 Request ，都会起一个线程去调Serverlet 对象的 Service 的方法。<br>Servlet对象是单例的，不要在Servlet对象中定义可修改的全局变量，这将带来线程安全问题。</p>
+<p>线程是共享 Java 虚拟机的内存空间的，在 Java 虚拟机里头，不同的线程是有线程栈，不同的线程它的局域变量全是分开的，分别保存在自己的线程站里头，这里也会带来另外一个调优的问题，如果当线程很多的时候，线程栈的空间也会很大，所以你要适当调整线程栈的大小，才能容纳更多的线程<br>，不是说你简单的把线程调到一万，它就能够跑的，调到一万后线程栈不够了，它也跑不了。</p>
+<h4 id="Tomcat中这些线程的生命周期"><a href="#Tomcat中这些线程的生命周期" class="headerlink" title="Tomcat中这些线程的生命周期"></a>Tomcat中这些线程的生命周期</h4><p><img src="/img/JavaEE%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF/2023-08-13-20-58-00.png"></p>
+<ul>
+<li>read<br>因为Http协议传输是不可靠的，总有TCP&#x2F;IP丢包重发或者别的意外，最后完整拼成完整的Http request（包含Head和Body），read就是完整读完Http request的过程。</li>
+<li>decode<br>把网络协议的Http request数据变成Java的HttpServletRequest对象</li>
+<li>compute<br>拿到HttpServletRequest对象，创建HttpServletResponse对象，通过<code>我们的业务逻辑并产生结果</code></li>
+<li>encode<br>将产生的结果，变成Http Response协议的数据</li>
+<li>send<br>把Http Response协议的数据传回给客户端</li>
+</ul>
+<h4 id="Tomcat-性能调优"><a href="#Tomcat-性能调优" class="headerlink" title="Tomcat 性能调优"></a>Tomcat 性能调优</h4><p>在设计多线程软件时，实际上是没有办法无限制的增加线程的，<br>主机的内存和CPU是有限的<br>如果增加的线程数量太多，CPU会时间片轮转时，把大量时间花在轮转上面，这并不是一个高效的软件设计</p>
+<p>我们应该根据一台物理机器的实际状况，它有多少内存，它的 CPU 的计算能力，再结合我们任务的这样一个情况，去制定一个线程池。</p>
+<p>线程池是什么呢,就是我们在上头最多允许你跑多少个线程,如果多于这个线程的话,那怎么办呢,那就让它去等待,如果在多于等待的时长呢,我就拒绝,这就是线程池的概念,有了这个线程池以后,我们实际上是预先创建了若干个线程,放到线程池里头,因为孵化线程是需要,消耗时间的,要用代码来消耗时间的,比如说内存中间开一些空间等等,所以我们把线程事先孵化出来,把它放到线程池里头,当请求过来的时候,我们是从线程池里头拉空闲的线程,拿出来,直接去用的,这样可以加快它的响应时间,而且可以管理,整个服务器上头,对于内存和CPU的消耗,不会出现说它的请求多了,它的内存不够,它的服务器崩溃的这样的一种情况,因为它用线程池卡住了它软件的上限。</p>
+<h5 id="Servlet-Stack所关心的参数"><a href="#Servlet-Stack所关心的参数" class="headerlink" title="Servlet Stack所关心的参数"></a>Servlet Stack所关心的参数</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#默认值和解释如下</span><br><span class="line"></span><br><span class="line">#①最大工作线程数（上限由内存和CPU决定）</span><br><span class="line">server.tomcat.max-threads=200</span><br><span class="line">#③最大连接数（连接数=工作线程数+等待队列）</span><br><span class="line">server.tomcat.max-connections=10000</span><br><span class="line">#②等待队列长度（超过工作线程数后就进入这个等待队列）</span><br><span class="line">server.tomcat.accept-count=100</span><br><span class="line"></span><br><span class="line">#最小工作空闲线程数（线程池启动时有10个线程，超过10个就要孵化线程</span><br><span class="line">#假设工作线程达到上限200（最大工作线程数）但后面压力下来了，会把孵化的线程释放掉，释放内存空间，</span><br><span class="line">#少于10个请求它就一直保持10个线程在里头）</span><br><span class="line">server.tomcat.min-spare-threads=10</span><br><span class="line"></span><br><span class="line">#最多可以同时处理300个请求，200工作线程数，100等待队列长度</span><br><span class="line">#超过最多可以同时处理时就拒绝服务</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h5 id="I-x2F-O密集型还是计算密集型"><a href="#I-x2F-O密集型还是计算密集型" class="headerlink" title="I&#x2F;O密集型还是计算密集型"></a>I&#x2F;O密集型还是计算密集型</h5><ul>
+<li>I&#x2F;O密集型<br>在read和send的过程中花费较多的时间<br>I&#x2F;O会占用内存开销，如果你内存足够大，你可以尽量多开线程，max-threads可以开很高，对CPU压力不大，只要内存够你就尽量开到顶</li>
+<li>计算密集型<br>在compute的过程中花费较多的时间<br>计算会占用CPU资源，如果CPU算的过来，可以慢慢加max-threads<br>如果算不过来，升级CPU，再加max-threads</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>指标\工作模式3选1</th>
+<th>BIO</th>
+<th><strong><code>NIO</code></strong></th>
+<th>APR</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-</td>
+<td>阻塞IO</td>
+<td>异步IO</td>
+<td>异步IO</td>
+</tr>
+<tr>
+<td><strong>实现方式</strong></td>
+<td>Java</td>
+<td>Java</td>
+<td>原生库</td>
+</tr>
+<tr>
+<td><strong>I&#x2F;O速度</strong></td>
+<td>会慢</td>
+<td>快</td>
+<td>更快</td>
+</tr>
+<tr>
+<td><strong>实现难度</strong></td>
+<td>简单</td>
+<td>普通</td>
+<td>困难</td>
+</tr>
+</tbody></table>
+<ul>
+<li>BIO<br><img src="/img/JavaEE%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF/2023-08-13-16-33-46.png"><br>在BIO中，线程有部分时间被消耗在 read 和 send 的过程，占用线程资源不能及时释放<br><img src="/img/JavaEE%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF/2023-08-13-16-37-45.png"></li>
+<li>NIO<br>Tomcat 的8版本之后默认是使用NIO<br>在NIO中，read 和 send 的过程被交给NioChannel排队处理，由一个独立的线程Poller来处理，在做decode和encode的时候只需要根据排队的轮询结果，直接去buffer队列取即可。<br><img src="/img/JavaEE%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF/2023-08-13-16-52-52.png"><br>避免了每个线程在 read 和 send 过程中的 I&#x2F;O 阻塞，因为线程池中的线程不再去做 read 和 send。<br><img src="/img/JavaEE%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF/2023-08-13-16-47-36.png"></li>
+<li>APR<br>Java字节码的运行效率是低于原生库的，APR是利用的Apache的Http原生库来实现的异步IO，这意味着你要额外先安装Apache的原生库，再装Tomcat才能跑出APR模式</li>
+</ul>
+<h3 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h3><p>Maven可以管理jar包，还可以用来编译代码，执行代码，打包、部署、测试……<br><img src="/img/JavaEE%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF/2023-08-13-21-40-14.png"><br><code>~/.m2/repository</code>我们的jar包默认会下载到这个位置<br>一般会将默认的远程中央仓库地址修改为国内阿里云镜像仓库，简单粗暴的方法是把.m2删掉</p>
+<p>Maven的使用划分为三个点，生命周期、阶段、插件以及插件的目标</p>
+<h4 id="Maven的生命周期"><a href="#Maven的生命周期" class="headerlink" title="Maven的生命周期"></a>Maven的生命周期</h4><p>Maven的生命周期有三点clean、default、site，它们没有执行的先后顺序要求，但是生命周期内部的每个阶段是按顺序执行的</p>
+<ul>
+<li>clean<br>项目构建前的清理工作<br>删除原先编译打包的class和jar文件<br><img src="/img/JavaEE%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF/2023-08-13-22-12-54.png"></li>
+<li>default<br>可以编译、测试、打包、安装部署到远程maven仓库……<br>按阶段的顺序执行，如果某一阶段出错就中断，后面的阶段不会再运行了<br><img src="/img/JavaEE%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF/2023-08-13-22-14-18.png"></li>
+<li>site<br>生成项目的测试报告<br><img src="/img/JavaEE%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF/2023-08-13-22-16-48.png"></li>
+</ul>
+<h4 id="Maven插件"><a href="#Maven插件" class="headerlink" title="Maven插件"></a>Maven插件</h4><p>上面简单列举了生命周期和内部的phase阶段，每个phase阶段干什么，是由插件决定的，可以是官方的，也可以是第三方的，只要把插件绑定到对应的phase上即可</p>
+<p>往往一个插件是可以干很多事情的，goal插件目标<br><img src="/img/JavaEE%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF/2023-08-13-22-30-12.png"></p>
+<p>每一个phase阶段默认就已经与内置插件的goal插件目标绑定了<br><img src="/img/JavaEE%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF/2023-08-13-22-36-01.png"><br><img src="/img/JavaEE%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF/2023-08-13-22-36-36.png"></p>
+<h4 id="Maven父子继承关系"><a href="#Maven父子继承关系" class="headerlink" title="Maven父子继承关系"></a>Maven父子继承关系</h4><p>比如这里有my-app和my-webapp两个子模块<br><img src="/img/JavaEE%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF/2023-08-13-23-02-49.png"><br>使用show effective pom可以看到最终在子模块生效的pom是什么<br>父pom还能管理所有子pom的version</p>
+<h4 id="Maven项目跑起来"><a href="#Maven项目跑起来" class="headerlink" title="Maven项目跑起来"></a>Maven项目跑起来</h4><p>除了传统的通过idea中Run&#x2F;Debug Configurations添加Tomcat，然后通过idea编译、打包到Tomcat运行，还可以通过maven的plugin插件，tomcat插件，在plugins运行，由maven编译、打包到maven中的tomcat插件中运行。</p>
+<h3 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h3><p>我们希望我们的软件模块是可以弹性部署的。可以根据实际负载情况，增加或减少部署。<br>而且对于软件来说，软件的运行环境是有意义的。</p>
+<h2 id="Spring和Spring-Boot"><a href="#Spring和Spring-Boot" class="headerlink" title="Spring和Spring Boot"></a>Spring和Spring Boot</h2><h3 id="软件模块化"><a href="#软件模块化" class="headerlink" title="软件模块化"></a>软件模块化</h3><p>除了单纯的按功能划分（商品，用户模块……）还可以分层划分<br>比如我们分为两层，当然还需要加入控制器层Api在中间进行转换</p>
+<ul>
+<li>视图层(面向功能)</li>
+<li>模型层(面向对象)<br><img src="/img/JavaEE%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF/2023-08-13-12-24-09.png"></li>
+</ul>
+<p>目前主流的在SpringWeb应用中的划分<br><img src="/img/JavaEE%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF/2023-08-13-12-08-32.png"><br><code>部署的时候尽量拆分成下面这样子几台主机， 方便后续的更新维护，做性能监控，性能调优 提高系统的整体性能</code><br><img src="/img/JavaEE%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF/2023-08-13-13-04-49.png"></p>
+<h2 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h2><p>录音有问题……<br>可以去慕课补</p>
+<h2 id="MyBatis"><a href="#MyBatis" class="headerlink" title="MyBatis"></a>MyBatis</h2><h2 id="Mysql原理"><a href="#Mysql原理" class="headerlink" title="Mysql原理"></a>Mysql原理</h2><h2 id="Spring的AOP"><a href="#Spring的AOP" class="headerlink" title="Spring的AOP"></a>Spring的AOP</h2><h2 id="Spring应用的测试"><a href="#Spring应用的测试" class="headerlink" title="Spring应用的测试"></a>Spring应用的测试</h2><h2 id="Spring的缓存机制"><a href="#Spring的缓存机制" class="headerlink" title="Spring的缓存机制"></a>Spring的缓存机制</h2><h2 id="Spring-Data和Mongo"><a href="#Spring-Data和Mongo" class="headerlink" title="Spring Data和Mongo"></a>Spring Data和Mongo</h2><h2 id="非常感谢"><a href="#非常感谢" class="headerlink" title="非常感谢"></a>非常感谢</h2><p>[^1]:JavaEE平台技术 2023 厦门大学 邱明，王美红[<a target="_blank" rel="noopener" href="https://space.bilibili.com/689233562/video">https://space.bilibili.com/689233562/video</a> ]</p>
+<p>[^1]:JavaEE平台技术 2021~2022 厦门大学 邱明[<a target="_blank" rel="noopener" href="https://www.icourse163.org/course/XMU-1462056168">https://www.icourse163.org/course/XMU-1462056168</a> ]</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">Henry</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/08/12/JavaEE%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF/">http://example.com/2023/08/12/JavaEE%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Henry's Hexo</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/06/18/OBS-studio/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">OBS studio</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Henry</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JavaEE%E7%9A%84%E5%8E%86%E5%8F%B2%E6%B8%8A%E6%BA%90"><span class="toc-number">1.</span> <span class="toc-text">JavaEE的历史渊源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86"><span class="toc-number">2.</span> <span class="toc-text">预备知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Web%E5%9F%BA%E7%A1%80"><span class="toc-number">2.1.</span> <span class="toc-text">Web基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Servlet"><span class="toc-number">2.2.</span> <span class="toc-text">Servlet</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Servlet%E8%A7%84%E8%8C%83"><span class="toc-number">2.2.1.</span> <span class="toc-text">Servlet规范</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0Servlet%E8%A7%84%E8%8C%83"><span class="toc-number">2.2.2.</span> <span class="toc-text">如何实现Servlet规范</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tomcat%E5%B9%B6%E5%8F%91%E5%8E%9F%E7%90%86"><span class="toc-number">2.3.</span> <span class="toc-text">Tomcat并发原理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Tomcat%E4%B8%AD%E8%BF%99%E4%BA%9B%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">2.3.1.</span> <span class="toc-text">Tomcat中这些线程的生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Tomcat-%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98"><span class="toc-number">2.3.2.</span> <span class="toc-text">Tomcat 性能调优</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Servlet-Stack%E6%89%80%E5%85%B3%E5%BF%83%E7%9A%84%E5%8F%82%E6%95%B0"><span class="toc-number">2.3.2.1.</span> <span class="toc-text">Servlet Stack所关心的参数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#I-x2F-O%E5%AF%86%E9%9B%86%E5%9E%8B%E8%BF%98%E6%98%AF%E8%AE%A1%E7%AE%97%E5%AF%86%E9%9B%86%E5%9E%8B"><span class="toc-number">2.3.2.2.</span> <span class="toc-text">I&#x2F;O密集型还是计算密集型</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Maven"><span class="toc-number">2.4.</span> <span class="toc-text">Maven</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Maven%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">2.4.1.</span> <span class="toc-text">Maven的生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Maven%E6%8F%92%E4%BB%B6"><span class="toc-number">2.4.2.</span> <span class="toc-text">Maven插件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Maven%E7%88%B6%E5%AD%90%E7%BB%A7%E6%89%BF%E5%85%B3%E7%B3%BB"><span class="toc-number">2.4.3.</span> <span class="toc-text">Maven父子继承关系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Maven%E9%A1%B9%E7%9B%AE%E8%B7%91%E8%B5%B7%E6%9D%A5"><span class="toc-number">2.4.4.</span> <span class="toc-text">Maven项目跑起来</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Docker"><span class="toc-number">2.5.</span> <span class="toc-text">Docker</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring%E5%92%8CSpring-Boot"><span class="toc-number">3.</span> <span class="toc-text">Spring和Spring Boot</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E6%A8%A1%E5%9D%97%E5%8C%96"><span class="toc-number">3.1.</span> <span class="toc-text">软件模块化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SpringMVC"><span class="toc-number">4.</span> <span class="toc-text">SpringMVC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MyBatis"><span class="toc-number">5.</span> <span class="toc-text">MyBatis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mysql%E5%8E%9F%E7%90%86"><span class="toc-number">6.</span> <span class="toc-text">Mysql原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring%E7%9A%84AOP"><span class="toc-number">7.</span> <span class="toc-text">Spring的AOP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring%E5%BA%94%E7%94%A8%E7%9A%84%E6%B5%8B%E8%AF%95"><span class="toc-number">8.</span> <span class="toc-text">Spring应用的测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring%E7%9A%84%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6"><span class="toc-number">9.</span> <span class="toc-text">Spring的缓存机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring-Data%E5%92%8CMongo"><span class="toc-number">10.</span> <span class="toc-text">Spring Data和Mongo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%9E%E5%B8%B8%E6%84%9F%E8%B0%A2"><span class="toc-number">11.</span> <span class="toc-text">非常感谢</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/08/12/JavaEE%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF/" title="JavaEE平台技术"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JavaEE平台技术"/></a><div class="content"><a class="title" href="/2023/08/12/JavaEE%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF/" title="JavaEE平台技术">JavaEE平台技术</a><time datetime="2023-08-12T05:47:46.000Z" title="发表于 2023-08-12 13:47:46">2023-08-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/18/OBS-studio/" title="OBS studio"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="OBS studio"/></a><div class="content"><a class="title" href="/2023/06/18/OBS-studio/" title="OBS studio">OBS studio</a><time datetime="2023-06-18T13:16:39.000Z" title="发表于 2023-06-18 21:16:39">2023-06-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/04/SpringCloud%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%8A%80%E6%9C%AF%E6%A0%88/" title="SpringCloud微服务技术栈"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringCloud微服务技术栈"/></a><div class="content"><a class="title" href="/2023/06/04/SpringCloud%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%8A%80%E6%9C%AF%E6%A0%88/" title="SpringCloud微服务技术栈">SpringCloud微服务技术栈</a><time datetime="2023-06-04T15:06:53.000Z" title="发表于 2023-06-04 23:06:53">2023-06-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/08/JavaScript%E6%A8%A1%E5%9D%97%E5%8C%96/" title="JavaScript模块化"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JavaScript模块化"/></a><div class="content"><a class="title" href="/2023/04/08/JavaScript%E6%A8%A1%E5%9D%97%E5%8C%96/" title="JavaScript模块化">JavaScript模块化</a><time datetime="2023-04-08T04:10:38.000Z" title="发表于 2023-04-08 12:10:38">2023-04-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/05/%E5%BE%AE%E7%A7%AF%E5%88%86/" title="微积分"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="微积分"/></a><div class="content"><a class="title" href="/2023/04/05/%E5%BE%AE%E7%A7%AF%E5%88%86/" title="微积分">微积分</a><time datetime="2023-04-05T09:11:17.000Z" title="发表于 2023-04-05 17:11:17">2023-04-05</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Henry</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
