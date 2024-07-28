@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>goLang入门 | Henry's Hexo</title><meta name="author" content="Henry"><meta name="copyright" content="Henry"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="前言不巧有些工具只能通过 goLang 编译来获得，那我就开始吧 环境安装和 hello wordhttps:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;golang&#x2F; 编译带依赖的 goLang 项目go install从互联网上获取并安装依赖……xcaddy build --withxcaddy 从互联网上获取并安装依赖…… 诸如此类的从互联网上获取依赖时，我们必须确保有正常连接，需要的话可以执">
+<meta property="og:type" content="article">
+<meta property="og:title" content="goLang入门">
+<meta property="og:url" content="http://example.com/2024/03/24/goLang%E5%85%A5%E9%97%A8/index.html">
+<meta property="og:site_name" content="Henry&#39;s Hexo">
+<meta property="og:description" content="前言不巧有些工具只能通过 goLang 编译来获得，那我就开始吧 环境安装和 hello wordhttps:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;golang&#x2F; 编译带依赖的 goLang 项目go install从互联网上获取并安装依赖……xcaddy build --withxcaddy 从互联网上获取并安装依赖…… 诸如此类的从互联网上获取依赖时，我们必须确保有正常连接，需要的话可以执">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-03-24T06:07:48.000Z">
+<meta property="article:modified_time" content="2024-07-19T10:39:42.100Z">
+<meta property="article:author" content="Henry">
+<meta name="twitter:card" content="summary"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2024/03/24/goLang%E5%85%A5%E9%97%A8/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/local-search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'goLang入门',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-07-19 18:39:42'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">54</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Henry's Hexo</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">goLang入门</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-03-24T06:07:48.000Z" title="发表于 2024-03-24 14:07:48">2024-03-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-19T10:39:42.100Z" title="更新于 2024-07-19 18:39:42">2024-07-19</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="goLang入门"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>不巧有些工具只能通过 goLang 编译来获得，那我就开始吧</p>
+<h2 id="环境安装和-hello-word"><a href="#环境安装和-hello-word" class="headerlink" title="环境安装和 hello word"></a>环境安装和 hello word</h2><p><a target="_blank" rel="noopener" href="https://mirrors.aliyun.com/golang/">https://mirrors.aliyun.com/golang/</a></p>
+<h2 id="编译带依赖的-goLang-项目"><a href="#编译带依赖的-goLang-项目" class="headerlink" title="编译带依赖的 goLang 项目"></a>编译带依赖的 goLang 项目</h2><p><code>go install</code>从互联网上获取并安装依赖……<br><code>xcaddy build --with</code>xcaddy 从互联网上获取并安装依赖……</p>
+<p>诸如此类的从互联网上获取依赖时，我们必须确保有正常连接，需要的话可以执行下面一段命令换成我们这边的源<br><code>go env -w GOPROXY=https://goproxy.cn</code><br>可选的其他地址<br>GOPROXY&#x3D;<a target="_blank" rel="noopener" href="https://mirrors.cloud.tencent.com/go/">https://mirrors.cloud.tencent.com/go/</a><br>GOPROXY&#x3D;<a target="_blank" rel="noopener" href="https://goproxy.cn/">https://goproxy.cn</a></p>
+<p>依赖可能会尝试安装到如下环境变量对应的位置<br><code>$GOBIN </code><br><code>$HOME/go/bin</code><br><code>$GOROOT/bin</code><br><code>$GOTOOLDIR</code></p>
+<h2 id="caddy"><a href="#caddy" class="headerlink" title="caddy"></a>caddy</h2><p>caddy 是类似于 nginx 的 Web 服务器和代理服务器</p>
+<h2 id="xcaddy"><a href="#xcaddy" class="headerlink" title="xcaddy"></a>xcaddy</h2><p>xcaddy 是用来编译 caddy 的工具，那样就可以为 caddy 做自定义了</p>
+<h2 id="naiveproxy"><a href="#naiveproxy" class="headerlink" title="naiveproxy"></a>naiveproxy</h2><p>naiveproxy，通过字节填充来模拟 Chrome 网络栈，配合 HTTPS 协议后可以在传输过程中保护个人隐私</p>
+<h3 id="实现-naive-服务"><a href="#实现-naive-服务" class="headerlink" title="实现 naive 服务"></a>实现 naive 服务</h3><h4 id="naive-服务实现方法一：嵌入-caddy"><a href="#naive-服务实现方法一：嵌入-caddy" class="headerlink" title="naive 服务实现方法一：嵌入 caddy"></a>naive 服务实现方法一：嵌入 caddy</h4><p>可以通过 xcaddy 和 naiveproxy，编译出带 naive 功能的 caddy<br><code>xcaddy build --with github.com/caddyserver/forwardproxy@caddy2=github.com/klzgrad/forwardproxy@naive</code><br>编译成功后还要定义 caddy 的配置<code>Caddyfile</code>&#x2F;Caddyfile.json</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  http_port <span class="number">1180</span></span><br><span class="line">  https_port <span class="number">1443</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">:</span><span class="number">8022</span> <span class="punctuation">&#123;</span></span><br><span class="line">    tls C<span class="punctuation">:</span>\Users\henry\cert\ca.crt	C<span class="punctuation">:</span>\Users\henry\cert\ca.key</span><br><span class="line">    route <span class="punctuation">&#123;</span></span><br><span class="line">        forward_proxy <span class="punctuation">&#123;</span></span><br><span class="line">            basic_auth yourUserName yourPassword</span><br><span class="line">            hide_ip</span><br><span class="line">            hide_via</span><br><span class="line">            probe_resistance</span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line"></span><br><span class="line">        reverse_proxy https<span class="punctuation">:</span><span class="comment">//henry5001.github.io &#123;</span></span><br><span class="line">            header_up Host  <span class="punctuation">&#123;</span>upstream_hostport<span class="punctuation">&#125;</span></span><br><span class="line">            header_up X-Forwarded-Host  <span class="punctuation">&#123;</span>host<span class="punctuation">&#125;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>caddy run --config yourCfgPath/Caddyfile.json</code><br>or only input<code>caddy run</code> auto match and use currentPath’s Caddyfile</p>
+<h4 id="naive-服务实现方法二：运行-naive-amp-amp-运行-caddy"><a href="#naive-服务实现方法二：运行-naive-amp-amp-运行-caddy" class="headerlink" title="naive 服务实现方法二：运行 naive &amp;&amp; 运行 caddy"></a>naive 服务实现方法二：运行 naive &amp;&amp; 运行 caddy</h4><p>naive 侦听端口为 8080，这是 Caddy 将传递经过身份验证的数据流量<br><code>config.json</code>for naive</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;listen&quot;</span><span class="punctuation">:</span> <span class="string">&quot;http://127.0.0.1:8080&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;padding&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>Caddyfile</code>Caddyfile.json for caddy</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">yourDomain<span class="punctuation">:</span><span class="number">8022</span> <span class="punctuation">&#123;</span></span><br><span class="line">    tls C<span class="punctuation">:</span>\Users\henry\cert\ca.crt	C<span class="punctuation">:</span>\Users\henry\cert\ca.key</span><br><span class="line">    log stdout</span><br><span class="line">    errors stderr</span><br><span class="line">    root /var/www/html</span><br><span class="line"></span><br><span class="line">    forwardproxy <span class="punctuation">&#123;</span></span><br><span class="line">        basicauth yourUserName yourPassword</span><br><span class="line">        hide_ip</span><br><span class="line">        hide_via</span><br><span class="line">        probe_resistance</span><br><span class="line">        upstream http<span class="punctuation">:</span><span class="comment">//127.0.0.1:8080</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="naive-客户端方法一：运行客户端-naive-amp-amp-连接到客户端-naive"><a href="#naive-客户端方法一：运行客户端-naive-amp-amp-连接到客户端-naive" class="headerlink" title="naive 客户端方法一：运行客户端 naive &amp;&amp; 连接到客户端 naive"></a>naive 客户端方法一：运行客户端 naive &amp;&amp; 连接到客户端 naive</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;listen&quot;</span><span class="punctuation">:</span> <span class="string">&quot;socks://127.0.0.1:1080&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;proxy&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://yourUserName:yourPassword@youCaddyServerHost:port&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;padding&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;log&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>naive</code>启动 naive 客户端，可以配置 log 查看连接情况</p>
+<p>然后在需要时连接到客户端 naive<br>socks:&#x2F;&#x2F;127.0.0.1:1080<br><a target="_blank" rel="noopener" href="http://127.0.0.1:1080/">http://127.0.0.1:1080</a><br>即可享用</p>
+<p>配置文件 config.json 中，默认使用 HTTP2(TCP)协议连接服务器，可改为 quic 来使用 QUIC(UDP)协议<br>把客户端文件从 https,改为 quic 就行</p>
+<h3 id="域名-可信任的证书-你的服务程序"><a href="#域名-可信任的证书-你的服务程序" class="headerlink" title="域名 + 可信任的证书 + 你的服务程序"></a>域名 + 可信任的证书 + 你的服务程序</h3><h2 id="naive-服务实战"><a href="#naive-服务实战" class="headerlink" title="naive 服务实战"></a>naive 服务实战</h2><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">:</span><span class="number">2443</span><span class="punctuation">,</span> chwe.ddns.net<span class="punctuation">:</span><span class="number">2443</span> <span class="punctuation">&#123;</span></span><br><span class="line">	tls /root/caddy-work/cert/ca.cert /root/caddy-work/key/ca.key</span><br><span class="line">route <span class="punctuation">&#123;</span></span><br><span class="line">		forward_proxy <span class="punctuation">&#123;</span></span><br><span class="line">			basic_auth henry core@<span class="number">123</span></span><br><span class="line">			hide_ip</span><br><span class="line">			hide_via</span><br><span class="line">			probe_resistance</span><br><span class="line">			upstream http<span class="punctuation">:</span><span class="comment">//127.0.0.1:1080</span></span><br><span class="line">		<span class="punctuation">&#125;</span></span><br><span class="line">	file_server <span class="punctuation">&#123;</span></span><br><span class="line">		root /root/caddy-work/webapp/app001</span><br><span class="line">	<span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="goLang-和-Java-谁是未来呢？"><a href="#goLang-和-Java-谁是未来呢？" class="headerlink" title="goLang 和 Java 谁是未来呢？"></a>goLang 和 Java 谁是未来呢？</h2></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">Henry</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2024/03/24/goLang%E5%85%A5%E9%97%A8/">http://example.com/2024/03/24/goLang%E5%85%A5%E9%97%A8/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Henry's Hexo</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/04/11/%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E7%9B%B4%E4%BE%9B%E7%94%B5%E5%85%A5%E9%97%A8/"><img class="prev-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">安卓手机直供电入门</div></div></a></div><div class="next-post pull-right"><a href="/2024/03/22/Oracle-VM-VirtualBox/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Oracle VM VirtualBox</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Henry</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">54</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E5%92%8C-hello-word"><span class="toc-number">2.</span> <span class="toc-text">环境安装和 hello word</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E5%B8%A6%E4%BE%9D%E8%B5%96%E7%9A%84-goLang-%E9%A1%B9%E7%9B%AE"><span class="toc-number">3.</span> <span class="toc-text">编译带依赖的 goLang 项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#caddy"><span class="toc-number">4.</span> <span class="toc-text">caddy</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xcaddy"><span class="toc-number">5.</span> <span class="toc-text">xcaddy</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#naiveproxy"><span class="toc-number">6.</span> <span class="toc-text">naiveproxy</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0-naive-%E6%9C%8D%E5%8A%A1"><span class="toc-number">6.1.</span> <span class="toc-text">实现 naive 服务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#naive-%E6%9C%8D%E5%8A%A1%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9A%E5%B5%8C%E5%85%A5-caddy"><span class="toc-number">6.1.1.</span> <span class="toc-text">naive 服务实现方法一：嵌入 caddy</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#naive-%E6%9C%8D%E5%8A%A1%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%9A%E8%BF%90%E8%A1%8C-naive-amp-amp-%E8%BF%90%E8%A1%8C-caddy"><span class="toc-number">6.1.2.</span> <span class="toc-text">naive 服务实现方法二：运行 naive &amp;&amp; 运行 caddy</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#naive-%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9A%E8%BF%90%E8%A1%8C%E5%AE%A2%E6%88%B7%E7%AB%AF-naive-amp-amp-%E8%BF%9E%E6%8E%A5%E5%88%B0%E5%AE%A2%E6%88%B7%E7%AB%AF-naive"><span class="toc-number">6.2.</span> <span class="toc-text">naive 客户端方法一：运行客户端 naive &amp;&amp; 连接到客户端 naive</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%9F%E5%90%8D-%E5%8F%AF%E4%BF%A1%E4%BB%BB%E7%9A%84%E8%AF%81%E4%B9%A6-%E4%BD%A0%E7%9A%84%E6%9C%8D%E5%8A%A1%E7%A8%8B%E5%BA%8F"><span class="toc-number">6.3.</span> <span class="toc-text">域名 + 可信任的证书 + 你的服务程序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#naive-%E6%9C%8D%E5%8A%A1%E5%AE%9E%E6%88%98"><span class="toc-number">7.</span> <span class="toc-text">naive 服务实战</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#goLang-%E5%92%8C-Java-%E8%B0%81%E6%98%AF%E6%9C%AA%E6%9D%A5%E5%91%A2%EF%BC%9F"><span class="toc-number">8.</span> <span class="toc-text">goLang 和 Java 谁是未来呢？</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/07/21/%E6%96%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="新计算机网络"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="新计算机网络"/></a><div class="content"><a class="title" href="/2024/07/21/%E6%96%B0%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="新计算机网络">新计算机网络</a><time datetime="2024-07-21T03:12:31.000Z" title="发表于 2024-07-21 11:12:31">2024-07-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/20/serv00%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA/" title="serv00虚拟主机"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="serv00虚拟主机"/></a><div class="content"><a class="title" href="/2024/07/20/serv00%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA/" title="serv00虚拟主机">serv00虚拟主机</a><time datetime="2024-07-20T11:43:00.000Z" title="发表于 2024-07-20 19:43:00">2024-07-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/15/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" title="操作系统"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="操作系统"/></a><div class="content"><a class="title" href="/2024/07/15/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" title="操作系统">操作系统</a><time datetime="2024-07-15T11:49:16.000Z" title="发表于 2024-07-15 19:49:16">2024-07-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/" title="计算机系统基础"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计算机系统基础"/></a><div class="content"><a class="title" href="/2024/07/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/" title="计算机系统基础">计算机系统基础</a><time datetime="2024-07-13T13:32:05.000Z" title="发表于 2024-07-13 21:32:05">2024-07-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/30/cLang_C%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/" title="cLang_C语言入门"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cLang_C语言入门"/></a><div class="content"><a class="title" href="/2024/06/30/cLang_C%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/" title="cLang_C语言入门">cLang_C语言入门</a><time datetime="2024-06-30T04:04:06.000Z" title="发表于 2024-06-30 12:04:06">2024-06-30</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Henry</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
